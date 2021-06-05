@@ -1,0 +1,2655 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjMgh1o8MUnZ60Oyn9Dc7bqjwb0yqmvgI&callback=initMap" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var map;
+		var image;
+		var marker;
+
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+			showDivs(slideIndex += n);
+		}
+
+		function currentDiv(n) {
+			showDivs(slideIndex = n);
+		}
+
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("demo");
+			if (n > x.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = x.length
+			}
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" w3-white", "");
+			}
+			x[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " w3-white";
+		}
+		function initMap() {
+			map1 = new google.maps.Map(document.getElementById('map1'), {
+  				center: {lat: 35.911513, lng:  128.816092}, //위도 경도
+  				zoom: 16 //숫자클수록 지도가 자세히보임
+  			});
+
+			image1 = new google.maps.MarkerImage( 'http://www.larva.re.kr/home/img/boximage3.png',
+				new google.maps.Size(60, 60),
+				'',
+				'',
+				new google.maps.Size(60, 60));
+
+			marker1 = new google.maps.Marker({
+               position: {lat: 35.911513, lng:  128.816092}, // 마커가 위치할 위도와 경도(변수)
+               map: map1,
+               icon: image, // 마커로 사용할 이미지(변수)
+               title: '크레용 헬스장' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+           });
+
+
+			map2 = new google.maps.Map(document.getElementById('map2'), {
+  				center: {lat: 35.917379, lng:  128.826597}, //위도 경도
+  				zoom: 16 //숫자클수록 지도가 자세히보임
+  			});
+
+			image2 = new google.maps.MarkerImage( 'http://www.larva.re.kr/home/img/boximage3.png',
+				new google.maps.Size(60, 60),
+				'',
+				'',
+				new google.maps.Size(60, 60));
+
+			marker2 = new google.maps.Marker({
+               position: {lat: 35.917379, lng:  128.826597}, // 마커가 위치할 위도와 경도(변수)
+               map: map2,
+               icon: image, // 마커로 사용할 이미지(변수)
+               title: '크리스 컨테이너' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+           });
+
+			map3 = new google.maps.Map(document.getElementById('map3'), {
+  				center: {lat: 35.907973, lng:  128.813135}, //위도 경도
+  				zoom: 16 //숫자클수록 지도가 자세히보임
+  			});
+
+			image3 = new google.maps.MarkerImage( 'http://www.larva.re.kr/home/img/boximage3.png',
+				new google.maps.Size(60, 60),
+				'',
+				'',
+				new google.maps.Size(60, 60));
+
+			marker3 = new google.maps.Marker({
+               position: {lat: 35.907973, lng:  128.813135}, // 마커가 위치할 위도와 경도(변수)
+               map: map3,
+               icon: image, // 마커로 사용할 이미지(변수)
+               title: '효성 휘트니스 센터' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+           });
+		}
+		$(document).ready(function () {
+				//initialize swiper when document ready
+				var mySwiper = new Swiper ('.swiper-container', {
+					// Optional parameters
+					direction: 'vertical',
+					loop: true
+				})
+			});
+		</script>
+		<style type="text/css">
+		header{
+			text-align:center;
+		}
+		body {
+			position: relative;
+			height: 100%;
+		}
+		.himg{
+			width: 50px;
+		}
+		div{
+			text-align: center;
+		}
+		.imgimg{	
+			width:100%;
+		}
+		.listimg img{
+			width:100%;
+			height:100%;
+		}
+		.mySlides {
+			display: none
+		} 
+		.w3-left,
+		.w3-right,
+		.w3-badge {
+			cursor: pointer
+		}
+
+		.w3-badge {
+			height: 13px;
+			width: 13px;
+			padding: 0
+		}
+		#startpage{
+			margin: auto;
+			width:100%;
+			background-color: black;
+		}
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+		}
+
+		.swiper-slide {
+			text-align: center;
+			display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+			align-items:center; /* 위아래 기준 중앙정렬 */
+			justify-content:center; /* 좌우 기준 중앙정렬 */
+		}
+
+		.swiper-slide img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.swiper-scrollbar{
+			color: black;
+		}
+		.lposition{
+
+		}
+	</style>
+</head>
+<body>
+	<section data-role="page" id="startpage">
+		<header data-role="header" data-theme="b"><img class="himg" src="https://i.ibb.co/zx9PFy2/unnamed.png" alt="unnamed" border="0" ></header>
+		<div class="swiper-container">
+			<div class="swiper-wrapper" data-theme="b">
+				<div class="swiper-slide"><a href="#mainpage"><img src="https://i.ibb.co/MByWQmb/kayla-itsines-workout-for-motto.jpg" alt="image" border="0"></a>
+				</div>
+
+				<div class="swiper-slide"><a href="#mainpage"><img src="https://i.ibb.co/ZY0NGCb/7923a02a292883a741bfa115374bacff.jpg" alt="image" border="0"></a>
+				</div>
+				<div class="swiper-slide"><a href="#mainpage"><img src="https://i.ibb.co/xDwQgVT/file-20200604-130929-iutdtd.jpg" alt="file-20200604-130929-iutdtd" border="0"></a></div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="swiper-scrollbar"></div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script> const swiper = new Swiper('.swiper-container', {
+		loop: true,
+		pagination:{
+			el: '.swiper-pagination' },
+			navigation: {
+				nextEl: '.swiper-next',
+				prevEl: '.swiper-prev' } }) 
+			</script>
+			<footer data-role="footer"  data-position="fixed" data-theme="b"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+		</section>
+
+		<section data-role="page" id="mainpage" data-theme="b">
+			<header data-role="header"><h1>WORK OUT</h1></header>
+			<div class="content" data-role="content" class=mimg>
+				<img src="https://i.ibb.co/vcbzksW/image.jpg" alt="image" border="0" width="90%
+				">
+				<ul data-role="listview" data-theme="a" data-inset="true" class="lpositpon">
+					<li><a href="#mainpage2">웨이트 트레이닝</a></li>	
+					<li><a href="#hometpage">홈 트레이닝</a></li>
+					<li><a href="#foodpage">식단</a></li>
+					<li><a href="#gympage">하양 헬스장</a></li>
+				</ul>
+			</div>
+			<footer data-role="footer"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+		</section>
+
+		<section data-role="page" id="mainpage2" data-theme="b">
+			<header data-role="header">
+				<a href="#mainpage" data-icon="back" data-direction="reverse">Back</a><h1>WORK OUT</h1>
+				<a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a></header>
+				<div class="content" data-role="content">
+					<ul data-role="listview" data-theme="a" data-inset="true">
+						<li><a href="#chestpage">가슴</a>
+						</li>
+						<li><a href="#backpage">등</a>							
+						</li>
+						<li><a href="#sholderpage">어깨</a>							
+						</li>
+						<li><a href="#armpage">팔</a>						
+						</ii>
+						<li><a href="#legspage">하체</a>						
+						</li>
+						<li><a href="#abspage">복근</a>					
+						</li>
+					</ul>
+				</div>
+				<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+			</section>
+
+			<section data-role="page" id="chestpage" data-theme="b">
+				<header data-role="header">
+					<a href="#mainpage2" data-icon="back" data-direction="reverse">Back</a>
+					<h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+					<div class="ui-grid-e" data-role="navbar" id="navbar">
+						<ul>
+							<div class="ui-block-a">
+								<div class="ui-block-a" style="width: 16.66%">
+								<li><a href="#chestpage">가슴</a></li>
+							</div>
+							<div class="ui-block-b" style="width: 16.66%">
+							<li><a href="#backpage">등</a></li>
+						</div>
+							<div class="ui-block-c" style="width: 16.66%">
+							<li><a href="#sholderpage">어깨</a></li>
+						</div>
+							<div class="ui-block-d" style="width: 16.66%">
+							<li><a href="#armpage">팔</a></li>			
+						</div>
+							<div class="ui-block-e" style="width: 16.66%"> 
+							<li><a href="#legspage">하체</a></li>
+						</div>
+							
+							<li><a href="#abspage">복근</a></li>
+						</ul>
+					</div>
+				
+			</header>
+
+					<div class="main" data-role="main" >
+						<ul data-role="listview" data-theme="a" class="listimg" data-inset="true">		
+							<li>
+								<a href="#bench"><img src="https://i.ibb.co/NpknL0N/image.jpg" alt="image" border="0">벤치 프레스<span class="ui-li-count">추천</span></a>
+							</li>
+							<li>
+								<a href="#dbp"><img src="https://i.ibb.co/dBMyrr1/image.jpg" alt="image" border="0">덤벨 프레스</a>
+							</li>
+							<li>
+								<a href="#ibp"><img src="https://i.ibb.co/qpWCNbH/Arnold-edit.jpg" alt="image" border="0">인클라인 벤치 프레스</a>
+							</li>
+							<li>
+								<a href="#dips"><img src="https://i.ibb.co/BTmDs0r/image.jpg" alt="image" border="0">딥스</a>
+							</li>
+						</ul>
+					</div>
+					<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+				</section>
+
+				<section data-role="page" id="backpage" data-theme="b" >
+					<header data-role="header">
+						<a href="#mainpage2" data-icon="back" data-direction="reverse">Back</a><h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+						<div class="ui-grid-e" data-role="navbar" id="navbar">
+						<ul>
+							<div class="ui-block-a">
+								<div class="ui-block-a" style="width: 16.66%">
+								<li><a href="#chestpage">가슴</a></li>
+							</div>
+							<div class="ui-block-b" style="width: 16.66%">
+							<li><a href="#backpage">등</a></li>
+						</div>
+							<div class="ui-block-c" style="width: 16.66%">
+							<li><a href="#sholderpage">어깨</a></li>
+						</div>
+							<div class="ui-block-d" style="width: 16.66%">
+							<li><a href="#armpage">팔</a></li>			
+						</div>
+							<div class="ui-block-e" style="width: 16.66%"> 
+							<li><a href="#legspage">하체</a></li>
+						</div>
+							
+							<li><a href="#abspage">복근</a></li>
+						</ul>
+					</div></header>
+						<div class="main" data-role="main">
+							<ul data-role="listview" data-theme="a" class="listimg" data-inset="true">		
+								<li>
+									<a href="#pullup"><img src="https://i.ibb.co/6NZtvz8/image.jpg" alt="image" border="0">풀 업<span class="ui-li-count">추천</span></a>
+								</li>
+								<li>
+									<a href="#lpd"><img src="https://i.ibb.co/W21njHC/image.jpg" alt="image" border="0">렛 풀다운</a>
+								</li>
+								<li>
+									<a href="#seatedrow"><img src="https://i.ibb.co/VNSYL28/image.jpg" alt="image" border="0">시티드 로우</a>
+								</li>
+								<li>
+									<a href="#odr"><img src="https://i.ibb.co/Q9P0xGM/image.jpg" alt="image" border="0">원암 덤벨로우</a>
+								</li>
+								<li>
+									<a href="#deadrift"><img src="https://i.ibb.co/0VjPs3y/image.jpg" alt="image" border="0">데드리프트</a>
+								</li>
+							</ul>
+						</div>
+						<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+					</section>
+
+					<section data-role="page" id="sholderpage" data-theme="b">
+						<header data-role="header">
+							<a href="#mainpage2" data-icon="back"  data-direction="reverse">Back</a><h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+							<div class="ui-grid-e" data-role="navbar" id="navbar">
+						<ul>
+							<div class="ui-block-a">
+								<div class="ui-block-a" style="width: 16.66%">
+								<li><a href="#chestpage">가슴</a></li>
+							</div>
+							<div class="ui-block-b" style="width: 16.66%">
+							<li><a href="#backpage">등</a></li>
+						</div>
+							<div class="ui-block-c" style="width: 16.66%">
+							<li><a href="#sholderpage">어깨</a></li>
+						</div>
+							<div class="ui-block-d" style="width: 16.66%">
+							<li><a href="#armpage">팔</a></li>			
+						</div>
+							<div class="ui-block-e" style="width: 16.66%"> 
+							<li><a href="#legspage">하체</a></li>
+						</div>
+							
+							<li><a href="#abspage">복근</a></li>
+						</ul>
+					</div></header>
+							<div class="main" data-role="main">
+								<ul data-role="listview" data-theme="a" class="listimg" data-inset="true">		
+									<li>
+										<a href="#milp"><img src="https://i.ibb.co/N2pVrHy/image.jpg" alt="image" border="0">밀리터리 프레스</a>
+									</li>
+									<li>
+										<a href="#dsp"><img src="https://i.ibb.co/T0WLydk/image.jpg" alt="image" border="0">덤벨 숄더 프레스</a><span class="ui-li-count">추천</span>
+									</li>
+									<li>
+										<a href="#srr"><img src="https://i.ibb.co/tHvyCJw/image.jpg" alt="image" border="0">사이드 레터럴 레이즈</a>
+									</li>
+									<li>
+										<a href="#bo"><img src="https://i.ibb.co/FYnpC1b/image.jpg" alt="image" border="0">벤트오버 레터럴 레이즈</a>
+									</li>
+								</ul>
+							</div>
+							<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+						</section>
+
+						<section data-role="page" id="armpage" data-theme="b">
+							<header data-role="header">
+								<a href="#mainpage2" data-icon="back"  data-direction="reverse">Back</a><h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+								<div class="ui-grid-e" data-role="navbar" id="navbar">
+						<ul>
+							<div class="ui-block-a">
+								<div class="ui-block-a" style="width: 16.66%">
+								<li><a href="#chestpage">가슴</a></li>
+							</div>
+							<div class="ui-block-b" style="width: 16.66%">
+							<li><a href="#backpage">등</a></li>
+						</div>
+							<div class="ui-block-c" style="width: 16.66%">
+							<li><a href="#sholderpage">어깨</a></li>
+						</div>
+							<div class="ui-block-d" style="width: 16.66%">
+							<li><a href="#armpage">팔</a></li>			
+						</div>
+							<div class="ui-block-e" style="width: 16.66%"> 
+							<li><a href="#legspage">하체</a></li>
+						</div>
+							
+							<li><a href="#abspage">복근</a></li>
+						</ul>
+					</div></header>
+								<div class="main" data-role="main" >
+									<ul data-role="listview" data-theme="a" data-inset="true">		
+										<div data-role="collapsible" data-collapsed="false">
+											<h4>이두</h4>		
+											<ul data-role="listview" data-theme="a"  class="listimg">											
+												<li>
+													<a href="#bc"><img src="https://i.ibb.co/TTnSSpN/image.jpg" alt="image" border="0">바벨 컬</a>
+												</li>
+												<li>
+													<a href="#ezc"><img src="https://i.ibb.co/P16gYvj/image.jpg" alt="image" border="0">이지 바 컬</a>
+												</li>
+												<li>
+													<a href="#dc"><img src="https://i.ibb.co/h9Bz3w5/image.png" alt="image" border="0">덤벨 컬</a><span class="ui-li-count">추천</span>
+												</li>
+											</ul>
+										</div>
+
+										<div data-role="collapsible" data-collapsed="false">
+											<h4>삼두</h4>		
+											<ul data-role="listview" data-theme="a" class="listimg">	
+												<li>
+													<a href="#lte"><img src="https://i.ibb.co/rZpMXJF/image.jpg" alt="image" border="0">라잉 트레이셉스 익스텐션</a><span class="ui-li-count">추천</span>
+												</li>
+												<li>
+													<a href="#cpd"><img src="https://i.ibb.co/BqyyRbQ/image.jpg" alt="image" border="0">케이블 푸쉬다운</a>
+												</li>
+												<li>
+													<a href="#closegrip"><img src="https://i.ibb.co/mBdf12G/image.jpg" alt="image" border="0">클로즈 그립 벤치프레스</a>
+												</li>
+												<li>
+													<a href="#overhead"><img src="https://i.ibb.co/zXKyPyT/image.jpg" alt="image" border="0">오버헤드 덤벨 프레스</a>
+												</li>
+											</ul>
+										</div>
+									</ul>
+								</div>
+								<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+							</section>
+
+							<section data-role="page" id="legspage" data-theme="b">
+								<header data-role="header">
+									<a href="#mainpage2" data-icon="back"  data-direction="reverse">Back</a><h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+									<div class="ui-grid-e" data-role="navbar" id="navbar">
+						<ul>
+							<div class="ui-block-a">
+								<div class="ui-block-a" style="width: 16.66%">
+								<li><a href="#chestpage">가슴</a></li>
+							</div>
+							<div class="ui-block-b" style="width: 16.66%">
+							<li><a href="#backpage">등</a></li>
+						</div>
+							<div class="ui-block-c" style="width: 16.66%">
+							<li><a href="#sholderpage">어깨</a></li>
+						</div>
+							<div class="ui-block-d" style="width: 16.66%">
+							<li><a href="#armpage">팔</a></li>			
+						</div>
+							<div class="ui-block-e" style="width: 16.66%"> 
+							<li><a href="#legspage">하체</a></li>
+						</div>
+							
+							<li><a href="#abspage">복근</a></li>
+						</ul>
+					</div></header>
+									<div class="main" data-role="main" >
+										<ul data-role="listview" data-theme="a" class="listimg" data-inset="true">		
+											<li>
+												<a href="#sq"><img src="https://i.ibb.co/QDh9h7M/image.jpg" alt="image" border="0">스쿼트</a><span class="ui-li-count">추천</span>
+											</li>
+											<li>
+												<a href="#le"><img src="https://i.ibb.co/QDh9h7M/image.jpg" alt="image" border="0">레그 익스텐션</a>
+											</li>
+											<li>
+												<a href="#plp"><img src="https://i.ibb.co/MZw3Z0g/image.jpg" alt="image" border="0">파워 레그 프레스</a>
+											</li>
+											<li>
+												<a href="#lc"><img src="https://i.ibb.co/qx7S3h6/image.jpg" alt="image" border="0">레그 컬</a>
+											</li>
+										</ul>
+									</div>
+									<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+								</section>
+
+								<section data-role="page" id="abspage" data-theme="b">
+									<header data-role="header">
+										<a href="#mainpage2" data-icon="back"  data-direction="reverse">Back</a>
+										<h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+										<div class="ui-grid-e" data-role="navbar" id="navbar">
+						<ul>
+							<div class="ui-block-a">
+								<div class="ui-block-a" style="width: 16.66%">
+								<li><a href="#chestpage">가슴</a></li>
+							</div>
+							<div class="ui-block-b" style="width: 16.66%">
+							<li><a href="#backpage">등</a></li>
+						</div>
+							<div class="ui-block-c" style="width: 16.66%">
+							<li><a href="#sholderpage">어깨</a></li>
+						</div>
+							<div class="ui-block-d" style="width: 16.66%">
+							<li><a href="#armpage">팔</a></li>			
+						</div>
+							<div class="ui-block-e" style="width: 16.66%"> 
+							<li><a href="#legspage">하체</a></li>
+						</div>
+							
+							<li><a href="#abspage">복근</a></li>
+						</ul>
+					</div>
+									</header>
+									<div class="main" data-role="main" >
+										<ul data-role="listview" data-theme="a" class="listimg" data-inset="true">
+											<li>
+												<a href="#crunch"><img src="https://i.ibb.co/BPZH9G4/image.jpg" alt="image" border="0">크런치</a><span class="ui-li-count">추천</span>
+											</li>
+											<li>
+												<a href="#lr"><img src="https://i.ibb.co/Hqm6qGH/image.jpg" alt="image" border="0">레그레이즈</a>
+											</li>
+											<li>
+												<a href="#hlr"><img src="https://i.ibb.co/r6NW46Y/image.jpg" alt="image" border="0">행잉 레그레이즈</a>
+											</li>
+										</ul>
+									</div>
+									<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+								</section>
+
+								<section data-role="page" id="hometpage" data-theme="b">
+									<header data-role="header">
+										<a href="#mainpage" data-icon="back"  data-direction="reverse">Back</a>
+										<h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a></header>
+										<div class="main" data-role="main">
+											<ul data-role="listview" data-theme="a"  class="listimg" data-inset="true">		
+												<li>
+													<a href="#pushup"><img src="https://i.ibb.co/48bH2kh/image.jpg" alt="image" border="0">푸시 업</a>
+												</li>
+												<li>
+													<a href="#pulluph"><img src="https://i.ibb.co/R6g9WRg/img.jpg" alt="img" border="0">풀 업</a>
+												</li>
+												<li>
+													<a href="#fk"><img src="https://i.ibb.co/gtQqcW4/5acacc721f00002d0016ca31.jpg" alt="5acacc721f00002d0016ca31" border="0">플랭크</a>
+												</li>
+												<li>
+													<a href="#crunchh"><img src="https://i.ibb.co/3pVjMpd/2.jpg" alt="2" border="0">크런치</a>
+												</li>
+											</li>
+										</ul>
+									</div>
+									<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+								</section>
+
+								<section data-role="page" id="foodpage" data-theme="b">
+									<header data-role="header">
+										<a href="#mainpage" data-icon="back"  data-direction="reverse">Back</a><h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a></header>
+										<div class="main" data-role="main">
+											<ul data-role="listview" data-theme="a" data-inset="true">		
+												<li><a href="https://www.foodsafetykorea.go.kr/mkisna/intro.do">개인 맞춤형 영양관리 프로그램 칼로리코디</a>
+												</li>
+											</ul>
+										</div>
+										<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+									</section>
+
+									<section data-role="page" id="gympage" data-theme="b">
+										<header data-role="header">
+											<a href="#mainpage" data-icon="back"  data-direction="reverse">Back</a><h1>WORK OUT</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a></header>
+											<div class="main" data-role="main">
+												<ul>
+													<div data-role="collapsible" data-collapsed="true">
+														<h4>크레용 헬스장</h4>
+														<div style="float: left; margin-right:"10px"><a href="https://ibb.co/syrpSdJ%22%3E"><img src="https://i.ibb.co/5BVXDgx/asd.png" alt="image" border="0" width="500px" height="400px"></a></div>
+														<div id="map1" style="width:400px;height:400px;"></div>
+													</div>
+													<div data-role="collapsible" data-collapsed="true">
+														<h4>크리스 컨테이너</h4>
+														<div style="float: left; margin-right:10px"><a href="https://ibb.co/pLJcCmh%22%3E"><img src="https://i.ibb.co/2kgxXbZ/1221.png" alt="image" border="0" width="500px" height="400px"></a></div>
+														<div id="map2" style="width:400px;height:400px;"></div>
+													</div>
+													<div data-role="collapsible" data-collapsed="true">
+														<h4>효성 휘트니스 센터</h4>
+														<div style="float: left; margin-right:10px"><a href="https://ibb.co/JmnBX2G%22%3E"><img src="https://i.ibb.co/YP2Rv81/image.png" alt="image" border="0" width="500px" height="400px"></a></div>
+														<div id="map3" style="width:400px;height:400px;float:left;"></div>
+													</div>					
+												</ul>
+											</div>
+											<footer data-role="footer"  data-position="fixed"><h1>COPYRIGHT BY 김용범 김호진</h1></footer>
+										</section>
+
+										<section data-role="page" id="bench" data-theme="b">
+											<div data-role="header">
+												<a href="#chestpage" data-icon="back"  data-direction="reverse">Back</a>
+												<h1>가슴 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+												<div data-role="navbar" id="navbar">
+													<ul>
+														<li><a href="#backpage">등</a></li>
+														<li><a href="#sholderpage">어깨</a></li>
+														<li><a href="#armpage">팔</a></li>			
+														<li><a href="#legspage">하체</a></li>
+														<li><a href="#abspage">복근</a></li>
+													</ul>
+												</div>
+											</div>
+											<div data-role="main" class="ui-content">
+												<h1>벤치 프레스</h1>
+												<a><img class="imgimg" src="https://i.ibb.co/JQQRdYN/image.png" alt="image" border="0"></a>
+											</br>
+											<div data-role="collapsible" data-collapsed="false">
+												<h4>운동 개요</h4>
+												<p>가슴 운동을 하는 프리 웨이트 중에서 중급 이상의 숙련자에게 추천되는 운동법이다.</br>
+												대흉근의 전체적인 크기를 키워주고 삼각근과 상완삼두근의 보조적인 참여를 유도해 강하면서도 균형 있는 상체를 만드는 데 효과적이다.</p></br></br>
+											</div>
+											<div data-role="collapsible" data-collapsed="true">
+												<h4>운동 순서</h4>
+												<p>1. 벤치에 누워 엉덩이와 견갑골을 등받이에 붙이고, 허리는 10cm가량 아치형을 만들어준다.어깨너비 두 배로 바를 잡고 눈이 바벨과 수직이 되도록 위치시킨다.</br></br>
+
+												2.바를 들어 가슴 중앙과 바가 수직이 되도록 위치시킨 후 팔꿈치를 살짝 구부려 고정한다.</br></br>
+
+
+											3.가슴과 바가 자석처럼 서로 만나는 느낌으로 가슴 위쪽 5~10cm까지 저항을 느끼며 바벨을 천천히 당긴다.</br></br>
+
+
+										4.겨드랑이에 힘을 준다는 느낌으로 바벨을 밀어 올린다.</br></br>
+									</p>
+								</div>
+
+								<div data-role="collapsible" data-collapsed="true">
+									<h4>주의 사항</h4>
+								지나치게 손목을 젖혀서 바를 잡을 경우 손목에 부상을 초래할 수 있고,</br> 무거운 중량을 가슴 부위로 지나치게 내리는 경우 어깨 관련 근육이나 회전근개의 손상이 발생할 수 있으므로 주의하도록 한다.</br>
+
+							손목이 지나치게 꺾이지 않도록 한다.</br></br>
+						</div>
+						<div data-role="collapsible" data-collapsed="true">
+							<h4>운동 팁</h4>
+							<p>가슴으로 당기고 올리는 동작을 가급적 느리게 일정한 속도로 실시할 때 대흉근을 가장 효과적으로 자극할 수 있다.
+
+							운동 중 팔꿈치를 완전히 펴지 않고 대흉근의 긴장을 유지한다.</p>
+						</p>
+					</div>
+					<a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+					<div data-role="popup" id="myPopupDialog" data-overlay-theme="b">
+						<div data-role="header">
+							<h1>운동 영상</h1>
+						</div>
+						<div data-role="main" class="ui-content">
+							<h2>벤치 프레스</h2>
+							<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/A2kHURY746E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+
+				</div>
+				<div data-role="footer"  data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#dips" data-icon="carat-l">이전으로</a></li>
+							<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+							<li><a href="#dbp" data-icon="carat-r">다음으로</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section data-role="page" id="dbp" data-theme="b">
+				<div data-role="header"><a href="#chestpage" data-icon="back" data-direction="reverse">Back</a>
+					<h1>가슴 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+					<div data-role="navbar" id="navbar">
+						<ul>
+							<li><a href="#backpage">등</a></li>
+							<li><a href="#sholderpage">어깨</a></li>
+							<li><a href="#armpage">팔</a></li>			
+							<li><a href="#legspage">하체</a></li>
+							<li><a href="#abspage">복근</a></li>
+						</ul>
+					</div>
+				</div>
+				<div data-role="main" class="ui-content">
+
+					<h1>덤벨 프레스</h1>
+					<a><img class="imgimg" src="https://i.ibb.co/GsJSqcB/image.jpg" alt="image" border="0"></a>
+				</br>
+				<div data-role="collapsible" data-collapsed="false">
+					<h4>운동 개요</h4>
+					<p>대흉근 전체 가동 범위에서 동작이 이루어지기 때문에 가슴을 모아주는 중앙 부위와 바깥쪽 근육의 크기를 키우는 데 효과적이다. 덤벨을 들었을 때 균형을 유지하기 위한 근육들을 함께 발달시킬 수 있는 장점이 있어 강하고 안정된 상체를 만들 수 있다.</p></br></br>
+				</div>
+				<div data-role="collapsible" data-collapsed="true">
+					<h4>운동 순서</h4>
+					<p>1. 벤치에 앉아 팔을 가슴 옆에 붙이고 덤벨을 든다.</br></br>
+
+					2. 벤치에 누워 가슴 중앙 부분과 수직이 되게 덤벨을 위치시키면서 팔꿈치를 살짝 구부린다.</br></br>
+
+				3. 가슴이 양옆으로 늘어나는 느낌을 느끼면서 덤벨이 가슴과 평행이 될 때까지 당긴다.</br></br>
+
+			4. 겨드랑이에 힘을 주면서 가슴을 모아주는 느낌으로 덤벨을 밀어 올린다.</br></br>
+		</p>
+	</div>
+
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>주의 사항</h4>
+	지나치게 손목을 젖혀서 바를 잡을 경우 손목에 부상을 초래할 수 있고,</br> 무거운 중량을 가슴 부위로 지나치게 내리는 경우 어깨 관련 근육이나 회전근개의 손상이 발생할 수 있으므로 주의하도록 한다.</br>
+
+손목이 지나치게 꺾이지 않도록 한다.</br></br>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>가슴으로 당기고 올리는 동작을 가급적 느리게 일정한 속도로 실시할 때 대흉근을 가장 효과적으로 자극할 수 있다.
+
+	운동 중 팔꿈치를 완전히 펴지 않고 대흉근의 긴장을 유지한다.</p>
+</p>
+</div>
+<a href="#myPopupDialog2" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog2" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>덤벨 프레스</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/xTQL6jvVMNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#bench" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#ibp" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="ibp" data-theme="b">
+	<div data-role="header"><a href="#chestpage" data-icon="back"  data-direction="reverse">Back</a>
+		<h1>가슴 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>인클라인 벤치 프레스</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/G56WQGh/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>대흉근의 상부 근육 발달을 목적으로 하는 운동이다. 인클라인 벤치 각도가 커질수록 어깨 근육 중 특히 전면 삼각근이 더 많이 동원되기 때문에 대흉근 상부를 집중하여 발달시키기 위해서는 벤치 각도를 30~40도로 유지하는 것이 중요하다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 벤치에 누워 엉덩이와 견갑골을 등받이에 최대한 붙이고 허리는 아치형을 만들어준다.</br></br>
+
+	2. 어깨너비 두 배로 바를 잡고 바벨을 든다.바벨을 들어 쇄골 아랫부분과 수직이 되게 바를 위치시키면서 팔꿈치를 살짝 구부린다.</br></br>
+
+
+3. 손목은 꺾이지 않도록 주의하면서 가슴과 바가 자석처럼 서로 만나는 느낌으로 바벨을 쇄골 아랫부분과 약간 떨어진 정도까지 당긴다.</br></br>
+
+4. 겨드랑이에 힘을 주는 느낌으로 바벨을 밀어 올린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	지나치게 손목을 젖혀서 바를 잡을 경우 손목에 부상을 초래할 수 있으므로 주의한다.
+
+	무거운 중량을 가슴 부위로 지나치게 내리는 경우 어깨 관련 근육의 부상과 회전근개 손상이 발생할 수 있으므로 주의한다.
+</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>손목이 지나치게 꺾이지 않도록 한다.
+
+		바를 잡을 때는 손바닥 아래쪽으로 더 가깝게 잡도록 한다.
+
+		운동 중 팔꿈치를 완전히 펴지 않고 대흉근의 긴장을 유지한다.
+
+		어깨 관절의 참여도를 줄이기 위해 플랫 벤치 프레스보다는 약간 좁은 그립을 사용한다.
+
+	</p>
+</div>
+<a href="#myPopupDialog3" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog3" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>인클라인 벤치 프레스</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/4HvI_mFhzVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#dbp" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#dips" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="dips" data-theme="b">
+	<div data-role="header"><a href="#chestpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>가슴 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="main" class="ui-content">
+
+		<h1>딥스</h1>
+		<a><img class="imgimg" src="https://i.ibb.co/6stFQ3J/image.png" alt="image" border="0"></a>
+	</br>
+	<div data-role="collapsible" data-collapsed="false">
+		<h4>운동 개요</h4>
+		<p>디클라인 벤치 프레스와 함께 대흉근의 하부를 발달시키는 데 효과적인 운동으로 초보자보다는 중급 이상의 숙련자에게 추천된다. 상완삼두근과 전면 삼각근이 보조적으로 참여하는 운동이다. 팔꿈치를 구부려 내려갈 때 각도를 90도 이상으로 내려가면 어깨에 무리가 갈 수 있고, 이에 따라 어깨근육과 관절에 손상이 갈 수 있으므로 주의하는 것이 중요하다.</p></br></br>
+	</div>
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>운동 순서</h4>
+		<p>1. 평행으로 된 바 위에 두 손을 짚고 올라선다.</br></br>
+
+		2. 무릎을 구부리고 엉덩이를 뒤로 살짝 빼면서 중심을 잡는다.</br></br>
+
+	3. 가슴을 바닥 쪽으로 숙이면서 팔꿈치가 90도가 될 때까지 저항을 느끼며 몸을 내린다.</br></br>
+
+4. 가슴 하부가 스트레칭되는 느낌으로 다시 원위치한다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+어깨가 유연하지 않거나 어깨를 지나치게 많이 내리면 근육과 인대의 손상 위험성이 커질 수 있으므로 반드시 스트레칭을 먼저 실시하도록 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>평행 바의 간격은 50~60cm 정도가 적당하다. 이보다 좁거나 넓으면 운동 범위가 줄어들어 효과가 떨어지며, 팔꿈치와 어깨를 다칠 수 있다.
+
+		트레이닝 목적에 따라 몸통을 앞으로 굽힐수록 대흉근이 좀 더 발달하고, 몸통을 세우면 삼두근 중심으로 운동이 된다.
+
+		초보자의 경우 어깨 운동 범위가 과도하지 않도록 보조자를 두고 운동할 수 있도록 한다.
+	</p>
+</div>
+<a href="#myPopupDialog4" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog4" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>딥스</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/YDZrMoJK_lQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#ibp" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#bench" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="pullup" data-theme="b">
+	<div data-role="header"><a href="#backpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>등 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#sholderpage">어깨</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>풀 업</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/NYGDRCf/image.png" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>일반적으로 수평으로 된 철봉에 손을 걸고 매달려 팔과 광배근(latissimus dorsi muscle), 대원근(teres major muscle)의 힘을 사용하여 턱이 철봉의 높이에 올 때까지 몸을 끌어 올리는 것을 말한다. 봉을 잡는 방식에 따라 손바닥이 바깥쪽을 향하면 풀업(Pull-up), 안쪽을 향하면 친업(Chin-up)이라고 한다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>철봉에 매달려 팔꿈치 관절을 굴곡시켜 턱을 철봉 위에까지 끌어올린다.</br>
+	다시 팔꿈치를 펴면서 매달린 자세로 천천히 되돌아 온다.</br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+턱걸이 시 어깨에 과도한 스트레스를 주지 않도록 주의해야 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p></p>
+</div>
+<a href="#myPopupDialog5" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog5" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>풀 업</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/0DsXTSHo3lU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#lpd" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="lpd" data-theme="b">
+	<div data-role="header"><a href="#backpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>등 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>													
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#sholderpage">어깨</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="main" class="ui-content">
+
+		<h1>랫 풀 다운</h1>
+		<a><img class="imgimg" src="https://i.ibb.co/zHDq5wR/image.png" alt="image" border="0"></a>
+	</br>
+	<div data-role="collapsible" data-collapsed="false">
+		<h4>운동 개요</h4>
+		<p>광배근을 발달시키기 위한 대표적인 운동이다. 턱걸이를 하기 어려운 초보자들에게 좋은 운동이다. 팔만 이용하여 바(bar)를 잡아당기면 이두근의 참여도가 지나치게 높아지므로 동작을 시작하는 시점에서 견갑골(날개뼈)을 우선적으로 내리도록 한다.</p></br></br>
+	</div>
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>운동 순서</h4>
+		<p>두 손으로 V자 모양이 되도록 넓게 바를 잡는다.<br><br>
+
+			의자에 앉아, 바와 가슴이 수직으로 만나는 지점 아래에 허벅지를 지지대에 고정시킨다.<br><br>
+
+			가슴을 위쪽으로 들어주면서 쇄골 아랫부분이 바에 닿을 정도로 광배근의 힘으로 바를 끌어내린다.<br><br>
+			광배근이 스트레칭되는 것을 느끼면서 팔을 천천히 편다.<br>
+		</p>
+	</div>
+
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>주의 사항</h4>
+		동작 중 상체가 지나치게 뒤로 넘어가지 않도록 한다.
+
+	바가 그리는 궤도와 팔꿈치가 동일선상에서 움직일 수 있도록 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>목 뒤 방향으로 바를 잡아당기면 등 상부가 더욱 발달된다.
+
+	상체가 바닥과의 수직선에 가까우면 등의 하부 근육을, 멀어지면 등의 상부 근육을 발달시킬 수 있다.</p>
+</div>
+<a href="#myPopupDialog6" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog6" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>랫 풀 다운</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/4HvI_mFhzVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#pullup" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#seatedrow" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="seatedrow" data-theme="b">
+	<div data-role="header"><a href="#backpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>등 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#sholderpage">어깨</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>시티드 로우</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/Cnmds1L/image.png" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>벤트 오버 로우 동작을 앉아서 케이블을 이용해 하는 운동이다. 등 근육의 선명도를 높이기 위해서는 반복횟수를 높여 실시한다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 발을 지지대에 고정시키고, 상체를 약간 구부려 V바를 잡는다.</br></br>
+	2. 견갑골 하부가 서로 닿는 느낌으로 바를 아랫배 쪽으로 끌어당긴다.</br></br>
+3. 광배근이 스트레칭되는 것을 느끼며 천천히 원위치한다. </br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	잡아당기는 동작에서 상체가 뒤로 넘어가지 않도록 주의한다.
+
+팔이나 어깨의 힘이 아니라 등의 힘으로 잡아당기면서 실시한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>그립을 넓게 할 경우, 광배근의 중간 부분을 좀 더 발달시킬 수 있다.</p>
+</div>
+<a href="#myPopupDialog7" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog7" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>시티드 로우</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/pkKfWeQ9APQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#lpd" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#odr" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="odr" data-theme="b">
+	<div data-role="header"><a href="#backpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>등 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#sholderpage">어깨</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>원암 덤벨로우</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/B3TFs3r/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>몸의 중심선(척추)에 가까운 등의 근육을 집중적으로 발달시키고 선명도를 증가시킬 수 있는 운동이다. 허리에 대한 부담이 적고 등 근육을 한쪽씩 집중시킬 수 있다. 한 방향씩 실시하면 동작의 가동 범위를 넓힐 수 있고 목표 근육에 자극을 증가시킬 수 있다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 오른손으로 덤벨을 잡고 왼손과 왼쪽 무릎을 벤치 위에 올리고 허리와 등을 곧게 편다.</br></br>
+	2. 고개를 들어 전방을 보며, 오른팔을 최대한 아래로 늘어뜨린다.</br></br>
+3. 광배근의 힘을 이용하여 덤벨을 옆구리 쪽으로 끌어올린다.</br></br>
+4. 광배근을 계속 긴장시키면서 천천히 덤벨을 내리며 처음 자세로 돌아온다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	수축 시 상체가 지나치게 돌아가지 않도록 주의한다.
+
+이두근이 지나치게 동원되지 않도록 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>팔꿈치를 최대한 위로 올리게 되면 승모근과 능형근에 보다 깊은 자극을 줄 수 있다.</p>
+</div>
+<a href="#myPopupDialog8" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog8" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>원암 덤벨로우</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/2i1v1UvsP_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#seatedrow" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#deadrift" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="deadrift" data-theme="b">
+	<div data-role="header"><a href="#backpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>등 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#sholderpage">어깨</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>데드 리프트</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/GM8QCL9/image.png" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>둔근, 대퇴 후면 근육 등 전신 근육 발달에 중요한 영향을 끼치는 운동이다. 신체의 파워를 기를 수 있고, 몸통을 둘러싸고 있는 근육들의 근력을 전반적으로 향상시킬 수 있는 운동이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 어깨너비보다 약간 넓게 다리를 벌리고 서서 어깨너비로 바벨을 잡는다.허리를 똑바로 세워 차렷 자세를 취하듯 가슴을 내밀고 엉덩이를 뒤로 치켜든다.</br></br>
+	2. 무릎을 살짝 구부리면서 바벨을 정강이까지 내린 다음 앞으로 숙이면서 복부와 등을 긴장시킨다.</br></br>
+3. 다시 등으로 끌어당기는 느낌으로 바벨을 들어올리면서 원위치해서 일어선다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	무릎 각을 유지한다.
+
+요추의 정상적인 만곡을 유지한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>고관절을 중심으로 상하체의 힘이 적절히 조화될 수 있도록 한다.</p>
+</div>
+<a href="#myPopupDialog9" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog9" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>데드 리프트</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/XIxSN7OewtA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#odr" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#pullup" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="milp" data-theme="b">
+	<div data-role="header"><a href="#sholderpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>어깨 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>밀리터리 프레스</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/z7DZbmK/image.png" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>삼각근의 전면과 측면의 볼륨을 키울 수 있는 운동이다. 머신과 비교해 전후 방향으로 작용하는 힘에 저항하게 되므로 근 발달에는 조금 더 효과적이나 안정성이 떨어진다. 전면 및 측면 삼각근의 단면적을 키우는 데 가장 효과적인 운동법이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 선 상태에서 어깨너비 두 배 정도로 바벨을 잡고 발은 어깨너비만큼 벌린다.가슴 위쪽으로 바벨을 올린다.</br></br>
+	2. 가슴에서부터 머리 위로 바벨을 들어올린다.</br></br>
+3. 어깨에 저항을 느끼면서 바가 귀와 수평이 될 때까지 바벨을 내린다.가슴에서 머리까지 바벨을 들어올리고 내리는 동작을 반복한다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	팔꿈치가 벌어지면 보조근인 삼두근의 작용이 커지므로 전완이 평행하도록 유지한다.
+
+상체는 가능한 중립적인 자세를 유지한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>서서 실시할 경우 복근, 요부근, 하체 등 전신 근력 발달을 촉진할 수 있다.
+
+		앉아서 실시하면 보다 삼각근에 집중할 수 있고 좀 더 많은 중량을 다룰 수 있다.
+
+	무릎을 살짝 구부리면 반동을 줄일 수 있다.</p>
+</div>
+<a href="#myPopupDialog10" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog10" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>밀리터리 프레스</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/JyAhfMb3FIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#pullup" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="dsp" data-theme="b">
+	<div data-role="header"><a href="#sholderpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>어깨 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>덤벨 숄더 프레스</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/9n7y7XR/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>삼각근의 전면과 측면의 볼륨과 선명도를 증가시킬 수 있는 운동이다. 바벨 프레스에 비해 어깨의 완전한 가동 범위로 운동할 수 있는 장점이 있다. 전후 또는 좌우 방향의 힘이 추가되어 삼각근의 균형적인 발달을 극대화시킬 수 있다. 하지만 그만큼 컨트롤이 어려워 중량을 많이 다룰 수 없기 때문에 근육 크기 발달에 있어서는 바벨 운동이 더 효과적이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 벤치에 앉아 등과 허리를 곧게 편다.</br></br>
+	2. 덤벨이 귀와 수평이 되고 팔꿈치가 직각이 되도록 위치시킨다.</br></br>
+3. 이두근이 귀에 닿는 느낌으로 덤벨을 머리 위로 들어올린다.</br></br>
+4. 천천히 저항을 느끼면서 덤벨이 귀와 수평될 때까지 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	덤벨이 지나치게 몸쪽이나 바깥쪽으로 나가면 주변 근육의 상해의 위험이 있으므로 주의한다.
+
+덤벨이 뒤쪽으로 넘어가게 되면 어깨를 바깥쪽으로 돌아가게 하여 탈구의 위험이 증가하게 되므로 주의한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>덤벨이 서로 부딪히거나 팔꿈치가 완전히 펴지게 되면 목표 근육에 힘을 유지할 수 없게 되므로 주의하여 동작한다.
+
+		팔꿈치가 몸 앞쪽으로 나오게 되면 삼각근 전면과 측면에 자극이 되고, 팔꿈치가 상체와 평행한 위치에 오게 되면 삼각근 전면의 고립 운동이 된다.
+	</p>
+</div>
+<a href="#myPopupDialog11" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog11" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>덤벨 숄더 프레스</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/WwYzWtm7iw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#milp" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#srr" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="srr" data-theme="b">
+	<div data-role="header"><a href="#sholderpage" data-icon="back"data-direction="reverse">Back</a>
+		<h1>어깨 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>사이드 레터럴 레이즈</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/QfMfLFg/image.png" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>삼각근의 선명도를 높일 수 있는 단관절 운동 중 측면 삼각근을 발달시키기 위한 운동이다. 프레스 동작과 달리 자극시키는 근육의 범위를 제한할 수 있고, 목표 부위 수축에 집중할 수 있다는 장점이 있다. 낮은 저항에 반응하는 근섬유들을 자극하기 위해 저중량, 고반복으로 실시한다. 동작 간 항상 팔꿈치가 손목보다 높게 유지되어야 측면 삼각근의 동원을 최대화할 수 있다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 어깨너비로 다리를 벌리고 덤벨을 들어 손바닥이 몸쪽을 향하게 해서 허벅지 옆에 위치시킨다.</br></br>
+		2. 팔꿈치를 살짝 구부려 고정한 상태에서 전완이 어깨와 평행이 될 때까지 덤벨을 양옆으로 들어올린다.
+	</br></br>
+3. 저항을 느끼면서 천천히 덤벨을 허벅지 옆으로 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+어깨높이 이상으로 덤벨을 들어올릴 경우 승모근의 개입이 많아지게 되므로 정해진 범위 내에서 운동하도록 한다.</br></br>
+
+본 운동은 목표 근육이 수축하는 동작, 즉 팔이 옆으로 올라가는 동작에서 흉곽이 넓어져 흉압이 떨어지기 때문에 다른 운동과 반대로 수축 시 숨을 들이마시도록 한다.
+</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>케이블을 이용하면 전 가동 범위에서 일정한 부하를 가할 수 있고, 한 손을 지지대에 고정한 채 한 팔씩 운동하여 집중력을 높일 수도 있다.</p>
+</div>
+<a href="#myPopupDialog12" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog12" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>사이드 레터럴 레이즈</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/iNgwwI3WBTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#dsp" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#bo" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="bo" data-theme="b">
+	<div data-role="header"><a href="#sholderpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>어깨 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#armpage">팔</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>벤트오버 레터럴 레이즈</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/VBr85Ym/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>삼각근의 선명도를 높일 수 있는 단관절 운동 중 후면 삼각근을 발달시키기 위한 운동이다. 프레스 동작과 달리 자극시키는 근육의 범위를 제한할 수 있고 목표 부위 수축에 집중할 수 있다는 장점이 있다. 낮은 저항에 반응하는 근섬유들을 자극하기 위해 저중량, 고반복으로 운동한다. 견갑골(날개뼈)이 움직이지 않도록 고정한 상태에서 동작이 이루어져야 후면 삼각근을 최대로 자극할 수 있다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 어깨너비로 다리를 벌리고 무릎을 살짝 구부린 다음 허리를 90도 정도 숙인다.</br></br>
+	2. 손바닥이 마주 보게 덤벨을 잡고 팔을 살짝 굽혀 고정한 후 정강이 앞에 위치시킨다.</br></br>
+3. 전완이 어깨와 평행이 될 때까지 덤벨을 양옆으로 들어올린다.</br></br>
+4. 천천히 저항을 느끼면서 덤벨을 정강이 앞으로 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	상체나 무릎의 반동을 이용하지 않도록 주의한다.
+
+팔이 지나치게 머리 쪽으로 올라가면 어깨 관절이 불안정해질 수 있으므로 어깨선을 넘지 않도록 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>바로 선 상태에서 케이블 타워의 위쪽 케이블(high pulley)을 이용하여 동작하면 허리에 부담을 줄이면서 전 가동 범위에 동일한 저항을 가할 수 있다.</p>
+</div>
+<a href="#myPopupDialog13" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog13" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>벤트오버 레터럴 레이즈</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/n3aX0oJyvWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#sss" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#milp" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="bc" data-theme="b">
+	<div data-role="header"><a href="#armpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>이두 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>바벨 컬</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/gtypyyJ/image.png" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>대표적인 상완이두근 운동으로 선 자세에서 스트레이트 바 또는 이지바(ez-bar)를 이용해서 실시할 수도 있다. 상완이두근의 근육의 크기를 증가시키는 데 효과적이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 두 손으로 바벨을 어깨너비로 잡고 다리도 어깨너비만큼 벌리고 선다.</br></br>
+	2. 팔꿈치를 옆구리에 고정시키고, 이두근의 힘을 이용해 바벨을 들어올린다.손의 방향은 삼각근 전면을 향하도록 한다.</br></br>
+3. 천천히 이두근의 저항을 느끼면서 바벨을 내린다.</br></br>       
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	상체와 무릎의 반동을 이용하지 않는다.
+
+팔꿈치가 앞으로 나가지 않도록 고정시킨다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>어깨보다 좁게 그립을 잡으면 상완이두근 바깥쪽 근육에 집중할 수 있다.
+
+	어깨보다 넓게 와이드 그립을 잡으면 상완이두근 안쪽 근육에 집중할 수 있다.</p>
+</div>
+<a href="#myPopupDialog14" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog14" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>바벨 컬</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/0DsXTSHo3lU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#dc" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#ezc" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="ezc" data-theme="b">
+	<div data-role="header"><a href="#armpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>이두 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>이지바 컬</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/mXTfqyT/EZ-Bar-Curls-Exercising-for-bodybuilding-Target-muscles-are-marked-in-red-Initial-and-final-steps-3.jpg" alt="EZ-Bar-Curls-Exercising-for-bodybuilding-Target-muscles-are-marked-in-red-Initial-and-final-steps-3" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>직선 형태의 바(bar)에 비해 손목에 가해지는 부담이 적다. 따라서 무거운 중량을 들 때에도 무리 없이 조금 더 집중할 수 있으며, 상완이두근의 크기와 근력 증진에 효과적이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 이지바(ez-bar)를 어깨너비로 잡고 선다.손바닥이 정면을 향하게 한다.</br></br>
+	2. 팔꿈치를 옆구리에 고정시키고, 손목은 안쪽으로 말아쥐면서 이지바를 위로 들어올린다.</br></br>
+3. 천천히 이지바를 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+팔꿈치가 벌어지거나 앞으로 나가지 않도록 고정시킨다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>어깨보다 좁게 그립을 잡으면 상완이두근 바깥쪽 근육에 집중할 수 있다.
+
+	어깨보다 넓게 와이드 그립을 잡으면 상완이두근 안쪽 근육에 집중할 수 있다.</p>
+</div>
+<a href="#myPopupDialog15" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog15" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>이지바 컬</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/Dlg0W_5mq98" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#bc" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#dc" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="dc" data-theme="b">
+	<div data-role="header"><a href="#armpage" data-icon="back"data-direction="reverse">Back</a>
+		<h1>이두 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>덤벨 컬</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/gtypyyJ/image.png" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>삼각근의 선명도를 높일 수 있는 단관절 운동 중 후면 삼각근을 발달시키기 위한 운동이다. 프레스 동작과 달리 자극시키는 근육의 범위를 제한할 수 있고 목표 부위 수축에 집중할 수 있다는 장점이 있다. 낮은 저항에 반응하는 근섬유들을 자극하기 위해 저중량, 고반복으로 운동한다. 견갑골(날개뼈)이 움직이지 않도록 고정한 상태에서 동작이 이루어져야 후면 삼각근을 최대로 자극할 수 있다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 어깨너비로 다리를 벌리고 무릎을 살짝 구부린 다음 허리를 90도 정도 숙인다.</br></br>
+	2. 손바닥이 마주 보게 덤벨을 잡고 팔을 살짝 굽혀 고정한 후 정강이 앞에 위치시킨다.</br></br>
+3. 전완이 어깨와 평행이 될 때까지 덤벨을 양옆으로 들어올린다.</br></br>
+4. 천천히 저항을 느끼면서 덤벨을 정강이 앞으로 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	상체나 무릎의 반동을 이용하지 않도록 주의한다.
+
+팔이 지나치게 머리 쪽으로 올라가면 어깨 관절이 불안정해질 수 있으므로 어깨선을 넘지 않도록 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>바로 선 상태에서 케이블 타워의 위쪽 케이블(high pulley)을 이용하여 동작하면 허리에 부담을 줄이면서 전 가동 범위에 동일한 저항을 가할 수 있다.</p>
+</div>
+<a href="#myPopupDialog16" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog16" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>덤벨 컬</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/pOs4tMPAIwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#ezc" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#bc" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="lte" data-theme="b">
+	<div data-role="header"><a href="#armpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>삼두 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>라잉 트라이셉스 익스텐션</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/cDpr6yN/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>팔 뒤쪽 상완삼두근의 근력을 증가시키고 삼두근의 안쪽 모양을 선명하게 만들어주는 운동이다. 상완삼두근의 전체적인 근매스 증대에 효과적이기 때문에 정확한 자세로 운동해야 한다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 벤치에 누워 머리 위로 어깨너비보다 좁은 간격으로 바벨을 잡는다.</br></br>
+	2. 팔꿈치를 가슴 앞으로 펴면서 바벨을 들어올린다.손의 힘이 아닌 삼두근의 힘을 이용한다.</br></br>
+3. 얼굴이 아닌 정수리 위로 포물선을 그리며 천천히 팔꿈치를 구부리며 바벨을 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	팔꿈치가 양옆으로 벌어지지 않도록 해야 한다.
+
+	수축 시 고정된 팔꿈치가 움직이지 않도록 주의한다.
+
+바벨을 머리 뒤로 내릴 때 허리가 과도하게 들리지 않도록 주의한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>디클라인 벤치에서 실시하면 가동 범위를 증가시킬 수 있다.</p>
+</div>
+<a href="#myPopupDialog17" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog17" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>라잉 트라이셉스 익스텐션</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/ogyGQxuxxn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#ezc" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#cpd" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="cpd" data-theme="b">
+	<a href="#armpage" data-icon="back" data-direction="reverse">Back</a>
+	<h1>삼두 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+	<div data-role="navbar" id="navbar">
+		<ul>
+			<li><a href="#chestpage">가슴</a></li>
+			<li><a href="#backpage">등</a></li>
+			<li><a href="#sholderpage">어깨</a></li>			
+			<li><a href="#legspage">하체</a></li>
+			<li><a href="#abspage">복근</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>케이블 푸쉬다운</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/XkPkzFK/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>상완삼두근 운동의 가동 범위를 최대로 활용하여 삼두근의 외측두를 발달시키는 데 효과적인 운동이다. 상완삼두근 운동 중 가장 안정적인 자세로 실시할 수 있으며 다른 상완삼두근 운동과 비교했을때 고중량에서도 안정된 자세를 유지하기에 최적의 운동이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 케이블 바를 어깨너비보다 좁게 잡고 무릎을 약간 굽힌다.</br></br>
+	2. 팔꿈치를 옆구리에 고정시키고, 삼두근의 힘으로 팔꿈치를 아래쪽으로 편다.</br></br>
+3. 천천히 저항을 느끼면서 팔꿈치를 90도 정도로 구부린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+팔꿈치를 뒤로 빼지 않도록 한다.</br></br>
+
+이완시 몸을 앞으로 구부리지 않도록 한다.
+
+팔꿈치가 양옆으로 벌어지지 않도록 한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>팔꿈치를 옆구리에 붙인 상태로 실시하면 외측부에 많은 자극이 주어진다.
+
+	팔꿈치를 앞으로 내밀거나 로프를 이용하면 삼두근 깊은 곳에 더 많은 자극이 주어진다.</p>
+</div>
+<a href="#myPopupDialog18" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog18" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>케이블 푸쉬다운</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/ObEtLS9heOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#lte" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#closegrip" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="closegrip" data-theme="b">
+	<div data-role="header"><a href="#armpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>삼두 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>클로즈 그립 벤치 프레스</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/R0t8jqs/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>상완삼두근의 전체적인 크기를 키우기 위한 운동이다. 다른 삼두근 운동에 비해 무거운 중량을 들 수 있는 장점이 있고, 허리와 등의 부담을 최소화시켜 서서 하는 동작보다 비교적 안정적으로 실시할 수 있다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 바벨이 얼굴 위에 오도록 벤치에 누워 엉덩이와 어깨는 벤치에 밀착시키고 허리는 아치형을 만든다.</br></br>
+	2. 바벨을 어깨너비보다 약간 좁게 잡고 들어올린다.</br></br>
+3. 삼두근의 저항을 느끼면서 가슴 하단 부분까지 바벨을 내린다.</br></br>
+4. 손의 힘이 아닌 삼두근의 힘을 이용해 다시 바벨을 들어올린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	운동 중 엉덩이를 들지 않는다.
+
+손목이 뒤로 꺾이지 않도록 손목을 고정시킨다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>처음 자세에서 팔꿈치를 몸통 옆에 붙여서 실시한다.</p>
+</div>
+<a href="#myPopupDialog19" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog19" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>클로즈 그립 벤치 프레스</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/c1a982FAGlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#cpd" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#overhead" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="overhead" data-theme="b">
+	<div data-role="header"><a href="#armpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>삼두 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#legspage">하체</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>오버헤드 트라이셉스 익스텐션</h1>
+	<a><img class="imgimg" src="https://i.ibb.co/jTsdM2Y/image.jpg" alt="image" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>상완삼두근 중 특히 장두 부분을 발달시키기에 좋은 운동이다. 벤치에 앉아서도 가능하고 일어서서도 가능하며, 상체가 덤벨의 반동으로 인해 흔들리지 않도록 하는 것이 중요하다. 탄력 있는 팔을 만들고 싶어하는 여성에게 추천하는 운동이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 다리는 어깨너비로 벌리고 덤벨의 한쪽을 두 손으로 포개어 잡는다.</br></br>
+	2. 손바닥이 위쪽을 향하게 덤벨을 머리 위로 쭉 올린다.</br></br>
+3. 팔꿈치를 머리 측면에 고정시키고 팔꿈치를 구부리며 덤벨을 천천히 머리 뒤로 내린다.</br></br>
+4. 팔꿈치를 펴는 느낌으로 덤벨을 들어올려 원위치시킨다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	팔꿈치를 완전히 펴지 않도록 한다.
+
+	운동 중 팔꿈치가 움직이지 않도록 하며 팔꿈치는 어깨 위에 최대한 고정시킨다.
+
+팔꿈치가 양옆으로 벌어지면 가동 범위가 줄어들어 운동 효과가 떨어진다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>이지바로 실시하면 삼두근의 깊은 쪽이 조금 더 많이 활성화된다.</p>
+</div>
+<a href="#myPopupDialog20" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog20" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>오버헤드 트라이셉스 익스텐션</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/3Nqt05cRhpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#closegrip" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#lte" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="sq" data-theme="b">
+	<div data-role="header">
+		<a href="#legspage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>하체 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#armpage">팔</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>스쿼트 </h1>
+	<a><img class="imgimg" src="https://i.ibb.co/sVDY6mQ/88347a88011da946b6bb65e9f5bc7afd.jpg" alt="88347a88011da946b6bb65e9f5bc7afd" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>하체 운동 중 가장 기본이 되는 운동이다. 운동 전에 체중을 이용한 스쿼트 동작으로 자세를 정확히 인지한 후 실시하는 것이 좋다. 등 하부, 엉덩이, 허벅지 전체, 종아리 부위의 근육을 협응적으로 훈련함으로써 에너지 소모가 가장 많은 대표적인 하체 운동이다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 선 자세에서 어깨너비보다 넓게 바벨을 잡는다.</br></br>
+	2. 바벨을 들어 머리 뒤의 승모근에 위치시킨다.시선은 정면을 향하고 복부에 힘을 주어 허리를 단단히 조여준다.</br></br>
+3. 무릎이 발끝보다 앞으로 나오지 않도록 하면서 허벅지와 수평이 될 때까지 앉는다.</br></br>
+4. 발뒤꿈치로 민다는 느낌으로 허벅지에 힘을 주면서 일어선다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	허리에 통증이 있는 경우엔 덤벨 스쿼트나 레그 프레스 운동으로 대체해서 실시하는 것이 바람직하다.
+
+	안정성을 위해 허리는 항상 곧게 펴고, 척추의 곡선을 그대로 유지하면서 대퇴, 고관절, 아킬레스건의 유연성이 사전에 확보되도록 스트레칭한다.
+
+	바벨을 들어올리는 동안 머리를 숙이지 않는다.
+
+	무릎을 바깥쪽 또는 안쪽으로 굽히지 말고, 일정하게 수평을 이루며 동작을 실시한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>배에 힘을 주어 복압을 증가시키면, 보다 강한 힘을 낼 수 있으며, 허리 부상의 위험을 최소화할 수 있다.</p>
+</div>
+<a href="#myPopupDialog21" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog21" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>스쿼트 </h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/QyAH8O5X6g0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#lc" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#le" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="le" data-theme="b">
+	<div data-role="header"><a href="#legspage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>하체 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#armpage">팔</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>레그 익스텐션 </h1>
+	<a><img class="imgimg" src="https://i.ibb.co/H2JGm4b/a9924e1639e2fcc81b7cea66eefa6e3b.png" alt="a9924e1639e2fcc81b7cea66eefa6e3b" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>허벅지 전면 근육을 발달시키는 운동이다. 여성의 경우, 적당한 무게로 횟수를 늘려 실시하면 탄력 있는 허벅지를 만드는 데 효과적이다. 또한 두 다리의 근력 수준 차이를 극복하기 위해 한 발씩 실시해도 좋은 운동이 될 수 있다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 등받이에 등을 대고 손잡이를 잡은 다음, 발목을 어깨너비보다 좁게 벌려서 롤패드에 고정시킨다.</br></br>
+	2. 다리를 들어올려 무릎을 펴서 허벅지 근육을 수축시킨다.</br></br>
+3. 천천히 저항을 느끼면서 다리를 내리며 긴장을 유지한다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+상체에 반동이 일어나지 않도록 천천히 실시할 수 있도록 주의한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>무릎의 각도가 90도 이상 과도하게 넘지 않도록 하고, 다리 근육에 지속적인 긴장이 유지될 수 있도록 한다.</p>
+</div>
+<a href="#myPopupDialog22" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog22" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>레그 익스텐션</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/mS9iwXhycJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#sq" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#plp" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="plp" data-theme="b">
+	<div data-role="header"><a href="#legspage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>하체 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#armpage">팔</a></li>
+				<li><a href="#abspage">복근</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content" >
+
+	<h1>파워 레그 프레스 </h1>
+	<a><img class="imgimg" src="https://i.ibb.co/VQzYbHn/Sled-45-degree-Leg-Press-resized.png" alt="Sled-45-degree-Leg-Press-resized" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>대퇴사두근과 둔근을 강화시켜주는 대표적이고 필수적인 하체 운동이다. 초보자가 실시하기에 가장 적당한 하체 운동이며 스쿼트에 비해 허리에 가해지는 부하가 적어 비교적 무거운 무게로 운동을 할 수 있는 장점이 있다. 또한 발판의 지지 위치에 변화를 줄 경우 좀 더 집중적인 근력 향상을 꾀할 수 있다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 머신에 앉아 엉덩이와 어깨를 밀착시킨다.</br></br>
+	2. 양발을 발판에 대고 어깨너비만큼 벌린 다음 무릎을 편다.</br></br>
+3. 앉는다는 느낌으로 천천히 무릎이 90도가 될 때까지 구부린다.</br></br>
+4. 발뒤꿈치로 민다는 느낌으로 허벅지에 힘을 주면서 무릎을 편다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	무릎을 완전히 펴지 말고 약간 구부려주는 것이 운동 효과에 좋다.
+
+	대퇴사두근의 힘으로 지탱하며 지속적으로 실시한다.
+
+엉덩이와 허리가 항상 기구에 밀착해 있어야 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>발판의 보폭을 좁게 하면 대퇴부 바깥쪽이, 넓게 하면 대퇴부 안쪽이 발달된다.
+
+	발을 발판의 윗쪽에 대고 하면 대둔근이, 발을 발판의 아래쪽에 대고 하면 대퇴사두근 아래쪽이 발달된다.</p>
+</div>
+<a href="#myPopupDialog23" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog23" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>파워 레그 프레스 </h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/EV0F_3S7Sks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#le" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#lc" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="lc" data-theme="b">
+	<a href="#legspage" data-icon="back" data-direction="reverse">Back</a>
+	<h1>하체 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+	<div data-role="navbar" id="navbar">
+		<ul>
+			<li><a href="#chestpage">가슴</a></li>
+			<li><a href="#backpage">등</a></li>
+			<li><a href="#sholderpage">어깨</a></li>			
+			<li><a href="#armpage">팔</a></li>
+			<li><a href="#abspage">복근</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>레그 컬 </h1>
+	<a><img class="imgimg" src="https://i.ibb.co/Q897fcy/LegCurls.jpg" alt="LegCurls" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>대퇴후면의 슬굴곡근을 발달시키기 위한 운동이다. 스탠딩 레그 컬보다 많은 중량을 들 수 있는 것이 장점으로, 하체 근력이 약한 사람에게 필수적인 운동이다. 단순관절 운동인 만큼 정확한 자세를 유지하는 것이 중요하다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 슬개골이 벤치 끝을 살짝 넘어오도록 위치시킨 후 기구 위에 엎드려 손잡이를 잡는다.발목을 기구에 걸고 아킬레스건 위에 롤패드가 오도록 위치시킨다.</br></br>
+	2. 허벅지 힘으로 패드를 끌어당기며 무릎을 굽힌다.</br></br>
+3. 천천히 저항을 느끼며 다리를 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	과도한 중량으로 동작 시 엉덩이를 사용할 경우 요통이 유발될 수 있다.
+
+다리를 완전히 내리지 않도록 주의한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>발목을 몸쪽 방향으로 잡아 당긴 상태로 실시하면 더욱 큰 자극을 느낄 수 있다.</p>
+</div>
+<a href="#myPopupDialog24" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog24" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>레그 컬 </h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/9w8d_EL-7e4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#plp" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#sq" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="crunch" data-theme="b">
+	<div data-role="header"><a href="#abspage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>복근 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#armpage">팔</a></li>
+				<li><a href="#legspage">하체</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>크런치 </h1>
+	<a><img class="imgimg" src="https://i.ibb.co/HxcpcRS/3.png" alt="3" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>복직근 중 상부를 강화하는 운동이다. 허리 부분이 바닥에서 떨어지지 않는다는 것이 싯업과 다른 점이다. 근육을 수축시킬 때뿐만 아니라 이완될 때도 복부에 긴장을 유지하는 것이 중요하다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 바닥에 누워 무릎을 구부리고 발이 바닥과 떨어지지 않도록 한다..</br></br>
+	2. 양손을 귀에 대고 복부에 힘을 주면서 고개를 살짝 든다.</br></br>
+3. 어깨가 바닥에서 약 10cm 떨어지도록 등을 둥글게 구부리면서 상복부를 수축한다.</br></br>
+4. 상복부의 긴장을 느끼면서 천천히 몸통을 바닥으로 눕힌다.이때 머리가 완전히 바닥에 닿지 않도록 한다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	동작 간 복부의 긴장이 풀어지지 않도록 한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>상체를 올리는 동작에서 호흡을 내쉬며 근육을 짜는 듯한 느낌을 느껴야 한다.</p>
+</div>
+<a href="#myPopupDialog25" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog25" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>크런치 </h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/KqnFav4Edvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#hlc" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#lr" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="lr" data-theme="b">
+	<div data-role="header"><a href="#abspage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>복근 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#armpage">팔</a></li>
+				<li><a href="#legspage">하체</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>레그레이즈 </h1>
+	<a><img class="imgimg" src="https://i.ibb.co/zN45t58/Lying-Leg-Raise.png" alt="Lying-Leg-Raise" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>하복부를 단련하는 대표적인 운동이다. 다리를 들어올리는 근육의 힘을 이용하여 동작하는 운동이다. 복근의 힘이 약한 상태에서 운동하게 되면 허리가 지나치게 바닥에서 떨어지게 되어 무리가 될 수 있으므로 사전에 복근의 힘을 키워 놓은 상태에서 실시하는 것이 바람직하다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 벤치에 누워 벤치 윗부분을 두 손으로 잡는다.</br></br>
+	2. 다리를 들어올린 후 무릎을 살짝 구부린다.골반을 가슴 쪽으로 말아 올린다.</br></br>
+3. 저항을 느끼며 다시 원위치한다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	다리를 내리는 동작에서 골반을 고정시키지 못하면 허리가 지나치게 뜨게 되어 무리가 될 수 있으므로 주의한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>처음에는 머리 위의 지지대를 잡고 실시하며, 점차 익숙해지면 양쪽 다리 옆에 손을 대고 복근의 힘으로만 동작할 수 있도록 한다.</p>
+</div>
+<a href="#myPopupDialog26" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog26" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>레그레이즈 </h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/SKCEpgEucFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#crunch" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#hlr" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="hlr" data-theme="b">
+	<div data-role="header"><a href="#abspage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>복근 운동</h1><a href="#mainpage" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar" id="navbar">
+			<ul>
+				<li><a href="#chestpage">가슴</a></li>
+				<li><a href="#backpage">등</a></li>
+				<li><a href="#sholderpage">어깨</a></li>			
+				<li><a href="#armpage">팔</a></li>
+				<li><a href="#legspage">하체</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div data-role="main" class="ui-content">
+
+	<h1>행잉 레그레이즈 </h1>
+	<a><img class="imgimg" src="https://i.ibb.co/4R2dDBH/ED6-RMeg-VUAAJ5l-U.jpg" alt="ED6-RMeg-VUAAJ5l-U" border="0"></a>
+</br>
+<div data-role="collapsible" data-collapsed="false">
+	<h4>운동 개요</h4>
+	<p>하복부의 단련을 위해 실시하는 강도가 높은 운동 방법 중 하나이다. 몸 전체가 매달려 있는 상태이기 때문에 몸의 균형을 유지하는 것이 중요하다.</p></br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 순서</h4>
+	<p>1. 철봉에 매달려 몸을 펴고 무릎을 약간 구부린다.</br></br>
+	2. 무릎을 최대한 가슴 쪽으로 끌어당긴다는 생각으로 하복부를 수축한다.마지막 정점에서 잠시 멈춘다.</br></br>
+3. 몸에 반동이 생기지 않도록 주의하면서 천천히 다리를 내린다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	초보자의 경우엔 실시하지 않도록 한다.
+
+	다리를 위로 들어올리는 것보다 하복부 힘을 이용해 가슴 쪽을 향하도록 한다.
+
+	수축 시 상체가 흔들리지 않도록 균형을 유지하고 복부 주변 근육에 힘을 집중한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>처음엔 무릎을 구부린 상태에서 실시하고 익숙해지면 다리를 편 상태에서 실시하여 강도를 높이도록 한다.</p>
+</div>
+<a href="#myPopupDialog27" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog27" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>행잉 레그레이즈 </h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/SKCEpgEucFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#lr" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#crunch" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="pushup" data-theme="b">
+	<div data-role="header"><a href="#mainpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>홈 트레이닝</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+
+		<h1>푸시 업</h1>
+		<a><a href="https://ibb.co/x8GvDhy"><img src="https://i.ibb.co/prZDx2g/push-up-tall-2.jpg" alt="push-up-tall-2" border="0"></a>
+	</br>
+	<div data-role="collapsible" data-collapsed="false">
+		<h4>운동 개요</h4>
+		<p>가장 널리 알려진 대흉근 운동이다. 대흉근뿐만 아니라 상완삼두근과 전면 삼각근 발달에도 도움이 되며 초보자들에게는 안전하고 효과적으로 상체를 단련할 수 있는 최고의 운동이다. 의자나 상자 위에 다리를 올려놓고 실시하면 조금 더 큰 힘을 발휘해야 하므로 대흉근 발달에는 더욱 효과적이다.</p></br></br>
+	</div>
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>운동 순서</h4>
+		<p>1. 엎드린 자세에서 어깨너비 두 배 정도로 두 손을 바닥에 짚고, 발뒤꿈치를 든 상태에서 팔과 무릎을 곧게 편다.
+
+		</br></br>
+	2. 가슴을 바닥 쪽으로 내미는 느낌으로 팔꿈치를 구부려 바닥에 닿기 전까지 몸을 내린다.</br></br>
+3. 겨드랑이에 힘을 주면서 가슴을 모아주는 느낌으로 팔을 편다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	손목이 많이 꺾이지 않도록 한다.
+
+	여성의 경우 푹신한 쿠션에 무릎을 꿇어 실시하도록 한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>어깨너비보다 약간 좁게 실시하면, 상완삼두근의 발달에 효과적일 뿐 아니라 가슴 근육에 다른 자극을 줄 수 있다.
+
+	다리를 벤치 위에 올려놓고 실시하면 부하가 증대되어 가슴 상부의 발달에 더 큰 효과가 있다.</p>
+</div>
+<a href="#myPopupDialog28" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog28" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>푸시 업</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/0DsXTSHo3lU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#crunchh" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#pulluph" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="pulluph" data-theme="b">
+	<div data-role="header"><a href="#mainpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>홈 트레이닝</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+
+		<h1>풀 업</h1>
+		<a><img class="imgimg" src="https://i.ibb.co/NYGDRCf/image.png" alt="image" border="0"></a>
+	</br>
+	<div data-role="collapsible" data-collapsed="false">
+		<h4>운동 개요</h4>
+		<p>일반적으로 수평으로 된 철봉에 손을 걸고 매달려 팔과 광배근(latissimus dorsi muscle), 대원근(teres major muscle)의 힘을 사용하여 턱이 철봉의 높이에 올 때까지 몸을 끌어 올리는 것을 말한다. 봉을 잡는 방식에 따라 손바닥이 바깥쪽을 향하면 풀업(Pull-up), 안쪽을 향하면 친업(Chin-up)이라고 한다.</p></br></br>
+	</div>
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>운동 순서</h4>
+		<p>철봉에 매달려 팔꿈치 관절을 굴곡시켜 턱을 철봉 위에까지 끌어올린다.</br>
+		다시 팔꿈치를 펴면서 매달린 자세로 천천히 되돌아 온다.</br>
+	</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+턱걸이 시 어깨에 과도한 스트레스를 주지 않도록 주의해야 한다.</br></br>
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p></p>
+</div>
+<a href="#myPopupDialog29" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog29" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>풀 업</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/9lsqux_WcBo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#pushup" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#fk" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="fk" data-theme="b">
+	<div data-role="header"><a href="#mainpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>홈 트레이닝</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+
+		<h1>플랭크</h1>
+		<a><img class="imgimg" src="https://i.ibb.co/7CBChdK/9991-FD425-CC3-DB8122.png" alt="9991-FD425-CC3-DB8122" border="0"></a>
+	</br>
+	<div data-role="collapsible" data-collapsed="false">
+		<h4>운동 개요</h4>
+		<p> 플랭크는 몸을 널빤지처럼 평평하게 만든 후 팔과 다리로만 버티는 동작으로 신체의 코어를 단련하는 효과가 있다.</p></br></br>
+	</div>
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>운동 순서</h4>
+		<p>1. 양팔을 어깨너비로 벌리고 주먹을 쥐어 바닥에 위치하도록 자리를 잡는다. 이때 양팔 위치가 어깨너비보다 벌어지지 않도록 유의한다.</br></br>
+		2. 무릎을 펴고 발 앞부분으로 몸을 지지하며 엎드린 자세를 취한다. 이때 발부터 머리까지 일직선이 되도록 유지한다.</br></br>
+	3. 허리가 아래로 처지지 않도록 배꼽을 위로 당기면서 몸을 지지하고 날개뼈 부분이 편평할 수 있도록 팔꿈치로 바닥과 몸을 서로 밀어내는 힘을 유지한다.</br></br>
+4. 팔꿈치부터 손바닥까지 동일하게 힘을 분배하고 팔꿈치에만 힘이 집중되지 않도록 주의한다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	동작 간 복부의 긴장이 풀어지지 않도록 한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p></p>
+</div>
+<a href="#myPopupDialog30" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog30" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>플랭크</h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/0DsXTSHo3lU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#pulluph" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#crunchh" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<section data-role="page" id="crunchh" data-theme="b">
+	<div data-role="header"><a href="#mainpage" data-icon="back" data-direction="reverse">Back</a>
+		<h1>홈 트레이닝</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+
+		<h1>크런치 </h1>
+		<a><img class="imgimg" src="https://i.ibb.co/HxcpcRS/3.png" alt="3" border="0"></a>
+	</br>
+	<div data-role="collapsible" data-collapsed="false">
+		<h4>운동 개요</h4>
+		<p>복직근 중 상부를 강화하는 운동이다. 허리 부분이 바닥에서 떨어지지 않는다는 것이 싯업과 다른 점이다. 근육을 수축시킬 때뿐만 아니라 이완될 때도 복부에 긴장을 유지하는 것이 중요하다.</p></br></br>
+	</div>
+	<div data-role="collapsible" data-collapsed="true">
+		<h4>운동 순서</h4>
+		<p>1. 바닥에 누워 무릎을 구부리고 발이 바닥과 떨어지지 않도록 한다..</br></br>
+		2. 양손을 귀에 대고 복부에 힘을 주면서 고개를 살짝 든다.</br></br>
+	3. 어깨가 바닥에서 약 10cm 떨어지도록 등을 둥글게 구부리면서 상복부를 수축한다.</br></br>
+4. 상복부의 긴장을 느끼면서 천천히 몸통을 바닥으로 눕힌다.이때 머리가 완전히 바닥에 닿지 않도록 한다.</br></br>
+</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h4>주의 사항</h4>
+	동작 간 복부의 긴장이 풀어지지 않도록 한다.
+</div>
+<div data-role="collapsible" data-collapsed="true">
+	<h4>운동 팁</h4>
+	<p>상체를 올리는 동작에서 호흡을 내쉬며 근육을 짜는 듯한 느낌을 느껴야 한다.</p>
+</div>
+<a href="#myPopupDialog31" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">운동 영상</a>
+<div data-role="popup" id="myPopupDialog31" data-overlay-theme="b">
+	<div data-role="header">
+		<h1>운동 영상</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<h2>크런치 </h2>
+		<a href="#"  class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">닫기</a>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/SKCEpgEucFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+<div data-role="footer"  data-position="fixed">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#fk" data-icon="carat-l">이전으로</a></li>
+			<li><a href="#mainpage" data-icon="home">홈으로</a></li>
+			<li><a href="#pushup" data-icon="carat-r">다음으로</a></li>
+		</ul>
+	</div>
+</div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+	var swiper = new Swiper(".mySwiper", {});
+</script>
+
+  <script type="text/javascript">//드랍메뉴
+  $(".dropmenu ul li").hover(function(){
+  	$(this).find("ul").stop().fadeToggle(300);
+  });
+</script>
+
+</body>
+</html>
